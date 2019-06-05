@@ -1,0 +1,9 @@
+.list-container {
+  max-height: 70vh;
+  margin-bottom: 10px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+
+

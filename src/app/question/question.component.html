@@ -1,0 +1,28 @@
+<div class="container">
+  <h2>
+    {{questions[questionNumber].question}}
+<!--    {{randomQuestion.question}}-->
+  </h2>
+  <div class="list-container">
+    <div class="list-group">
+      <button [disabled]="answered" *ngFor="let answer of questions[questionNumber].answers" type="button" (click)="selectedAnswer(answer)"
+              class="list-group-item list-group-item-action">
+        <div style="clear: both">
+          <label>{{answer.answer}}</label>
+        </div>
+      </button>
+    </div>
+    <div *ngIf="answered">
+      <label *ngIf="correct">Correct</label>
+      <label *ngIf="!correct">Incorrect</label>
+    </div>
+    <div>
+      <label *ngIf="answered">{{questions[questionNumber].scripture}}</label>
+    </div>
+    <div>
+      <button *ngIf="answered" class="btn-default" (click)="nextAnswer()">NEXT</button>
+    </div>
+  </div>
+</div>
+
+
