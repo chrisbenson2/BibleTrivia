@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {AfterViewInit, Component, ElementRef, OnInit} from '@angular/core';
 import {QuestionService} from '../question.service';
 import {Question} from '../models/question';
 
@@ -7,7 +7,7 @@ import {Question} from '../models/question';
   templateUrl: './question.component.html',
   styleUrls: ['./question.component.css']
 })
-export class QuestionComponent implements OnInit {
+export class QuestionComponent implements OnInit, AfterViewInit {
 
   public questions: Question[];
   public answered: boolean;
@@ -16,7 +16,8 @@ export class QuestionComponent implements OnInit {
   public questionNumber = 0;
   public randomQuestion: Question;
   constructor(
-    private _questionService: QuestionService
+    private _questionService: QuestionService,
+    private elementRef: ElementRef
   ) { }
 
   ngOnInit() {
@@ -24,7 +25,9 @@ export class QuestionComponent implements OnInit {
     this.questions = this._questionService.getAll();
     this.shuffle(this.questions);
   }
-
+  ngAfterViewInit(){
+    this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor = '#170c08';
+  }
   private shuffle(array) {
     let currentIndex = array.length, temporaryValue, randomIndex;
 
