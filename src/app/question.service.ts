@@ -15,7 +15,8 @@ export class QuestionService {
         {answer: 'Charles', correct: false},
         {answer: 'Moses', correct: false}
         ],
-      scripture: 'Psalm 83:18: May people know that you, whose name is Jehovah, You alone are the Most High over all the earth.'
+      scripture: 'Psalm 83:18: May people know that you, whose name is Jehovah, You alone are the Most High over all the earth.',
+      img: './assets/img/tetragrammaton.jpg'
     },
     {
       question: 'How can you become Jehovah\'s friend?',
@@ -26,7 +27,8 @@ export class QuestionService {
         {answer: 'Making a wish.', correct: false}
       ],
       scripture: 'John 17:3 This means everlasting life, their coming to know you, the only true God, and the one whom you sent,' +
-        ' Jesus Christ.'
+        ' Jesus Christ.',
+      img: './assets/img/bible.jpg'
     },
     {
       question: 'Proverb 27:11 says?',
@@ -41,7 +43,8 @@ export class QuestionService {
             'So that I can make a reply to him who taunts me.', correct: true}
       ],
       scripture: 'Proverb 27:11 Be wise, my son, and make my heart rejoice,\n' +
-        'So that I can make a reply to him who taunts me.'
+        'So that I can make a reply to him who taunts me.',
+      img: './assets/img/bible.jpg'
     },
     {
       question: 'Samuel\'s parents were named?' ,
@@ -51,7 +54,8 @@ export class QuestionService {
         {answer: 'Jacob and Abia', correct: false},
         {answer: 'Eetu and Ulrika', correct: false}
       ],
-      scripture: '1 Samuel 1:19, 20'
+      scripture: '1 Samuel 1:19, 20',
+      img: './assets/img/youngSamuel.jpg'
     },
     {
       question: 'Jehovah used Samuel to write what Bible books?' ,
@@ -61,7 +65,8 @@ export class QuestionService {
         {answer: 'Leviticus and Numbers', correct: false},
         {answer: 'Judges, Ruth, and part of First Samuel', correct: true}
       ],
-      scripture: 'Judges, Ruth and part of First Samuel'
+      scripture: 'Judges, Ruth and part of First Samuel',
+      img: './assets/img/ElderSamuel.jpg'
     },
     {
       question: 'Complete the Bible\'s statement: "And the boy Samuel continued...".' ,
@@ -71,7 +76,8 @@ export class QuestionService {
         {answer: 'growing up with Jehovah.', correct: true},
         {answer: 'writing the manual.', correct: false}
       ],
-      scripture: '1 Samuel 2:21'
+      scripture: '1 Samuel 2:21',
+      img: './assets/img/youngSamuel.jpg'
     },
     {
       question: 'How old was Hezekiah when he became king of Judah?' ,
@@ -81,7 +87,8 @@ export class QuestionService {
         {answer: '33 years old', correct: false},
         {answer: '12 years old', correct: false}
       ],
-      scripture: '2 Kings 18:1,2'
+      scripture: '2 Kings 18:1,2',
+      img: './assets/img/kingHezekiah.jpg'
     },
     {
       question: 'Jehovah miraculously extended Hezekiah\'s life by how many years?' ,
@@ -91,7 +98,8 @@ export class QuestionService {
         {answer: '50 years', correct: false},
         {answer: '1 year', correct: false}
       ],
-      scripture: '2 Kings 20:1-6'
+      scripture: '2 Kings 20:1-6',
+      img: './assets/img/kingHezekiah.jpg'
     },
     {
       question: 'Because of Hezekiah\'s prayers and loyalty, Jehovah sent an angel to strike down...' ,
@@ -101,7 +109,8 @@ export class QuestionService {
         {answer: '80,000 Assyrian soldiers.', correct: false},
         {answer: '185,000 Assyrian soldiers', correct: true}
       ],
-      scripture: '2 Kings 19:15, 19, 35, 36.'
+      scripture: '2 Kings 19:15, 19, 35, 36.',
+      img: './assets/img/angelStrike.jpg'
     },
     ];
 

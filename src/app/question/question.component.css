@@ -1,9 +1,40 @@
+.container {
+  background: url("../assets/img/background.jpg");
+  background-size: 75%;
+  height: 100vh;
+}
+
+h2{
+  color: white;
+}
+
+#scripture {
+  color: white;
+}
+
+#correct {
+  color: lawngreen;
+}
+
+#incorrect {
+  color: red;
+}
+
 .list-container {
+  opacity: 0.9;
   max-height: 70vh;
   margin-bottom: 10px;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 }
 
+#questionImg {
+  height: 10%;
+  width: 60vh;
+}
+
+.img-holder {
+  text-align: center;
+}
 
 
