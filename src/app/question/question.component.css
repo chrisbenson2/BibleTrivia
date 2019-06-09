@@ -5,7 +5,7 @@
   height: 100vh;
 }
 
-h2{
+h2, h3{
   color: white;
 }
 
@@ -35,7 +35,6 @@ h2{
 }
 
 .img-holder {
-  text-align: center;
 }
 
 img {

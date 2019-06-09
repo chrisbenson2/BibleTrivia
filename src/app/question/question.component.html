@@ -1,6 +1,15 @@
 <div class="container">
   <div class="img-holder">
-    <img  id="questionImg" src="{{questions[questionNumber].img}}" alt="">
+    <img id="questionImg" src="{{questions[questionNumber].img}}" alt="">
+    <div class="row">
+      <div class="col-6">
+        <h3>Score: {{score}}</h3>
+      </div>
+      <div class="col-6">
+        <h3>Lives: {{lives}}</h3>
+      </div>
+    </div>
+
   </div>
   <h2>
     {{questions[questionNumber].question}}

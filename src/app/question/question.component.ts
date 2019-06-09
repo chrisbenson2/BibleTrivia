@@ -1,6 +1,8 @@
 import {AfterViewInit, Component, ElementRef, OnInit} from '@angular/core';
 import {QuestionService} from '../question.service';
 import {Question} from '../models/question';
+import {Router} from '@angular/router';
+import {GameOverComponent} from '../game-over/game-over.component';
 
 @Component({
   selector: 'app-question',
@@ -10,6 +12,9 @@ import {Question} from '../models/question';
 export class QuestionComponent implements OnInit, AfterViewInit {
 
   public questions: Question[];
+  public score: number;
+  public lives = 3;
+  public wrong: number;
   public answered: boolean;
   public correct: boolean;
   public previousQuestion: Question;
@@ -17,15 +22,18 @@ export class QuestionComponent implements OnInit, AfterViewInit {
   public randomQuestion: Question;
   constructor(
     private _questionService: QuestionService,
-    private elementRef: ElementRef
+    private elementRef: ElementRef,
+    private router: Router
   ) { }
 
   ngOnInit() {
     this.answered = false;
     this.questions = this._questionService.getAll();
+    this.score = 0;
+    this.wrong = 0;
     this.shuffle(this.questions);
   }
-  ngAfterViewInit(){
+  ngAfterViewInit() {
     this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor = '#170c08';
   }
   private shuffle(array) {
@@ -49,19 +57,23 @@ export class QuestionComponent implements OnInit, AfterViewInit {
 
   public selectedAnswer(answer) {
     this.answered = true;
-    console.log(answer.correct);
     this.correct = answer.correct;
+
+    if (this.correct) {
+      this.score = this.score + 1;
+    } else {
+      this.lives = this.lives - 1;
+      this.wrong = this.wrong + 1;
+    }
   }
 
   public nextAnswer() {
+    if (this.wrong === 3) {
+      this.router.navigate(['game-over']);
+    }
      this.previousQuestion = this.randomQuestion;
      this.answered = false;
-    // this.randomQuestion = this.questions[Math.floor(Math.random() * this.questions.length)];
-    //
-    // if (this.randomQuestion === this.previousQuestion) {
-    //   this.randomQuestion = this.questions[Math.floor(Math.random() * this.questions.length)];
-    // }
-    // sequential code
+
     this.questionNumber = this.questionNumber + 1;
 
     if (this.questionNumber === this.questions.length) {
